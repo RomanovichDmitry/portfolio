@@ -1,0 +1,25 @@
+@keyframes menuMobile {
+  50% {
+    transform: translateX(280px); }
+  75% {
+    transform: translateX(240px); }
+  100% {
+    transform: translateX(250px); } }
+
+@keyframes menuTablet {
+  0% {
+    transform: translateY(5px); }
+  25% {
+    transform: translateY(-5px); }
+  50% {
+    transform: translateY(5px); }
+  75% {
+    transform: translateY(-5px); }
+  100% {
+    transform: translateY(5px); } }
+
+@keyframes hoverItem {
+  0% {
+    width: 0%; }
+  100% {
+    width: 50%; } }

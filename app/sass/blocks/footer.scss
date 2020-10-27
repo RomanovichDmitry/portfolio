@@ -1,0 +1,42 @@
+.main__footer {
+    background-color: #000;
+    color: white;
+
+    .contacts {
+        text-align: center;
+        h4 {
+            padding-top: 15px;
+            margin-bottom: 20px;
+        }
+        a {
+            color: white;
+            position: relative;
+            font-size: 12px;
+        }
+        div {
+            margin-bottom: 10px;
+        }
+
+    }
+
+    .text {
+        text-align: center;
+        font-size: 14px;
+        margin-top: 20px;
+    }
+}
+
+@media (min-width:$tablet) {
+.footer-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+
+    .text {
+        width: 50%;
+        line-height: 30px;
+        text-align: right;
+    }
+}
+}

@@ -1,0 +1,165 @@
+.main-content {
+    background-color: #dad9d6;
+    background-image: url(/images/8bit.jpg);
+    background-size: 400% 100%;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    
+    @media (min-width:$tablet) {
+        background-size: contain;
+    }
+}
+
+
+.portfolio {
+    &__title{
+       padding-top: 10px;
+        text-align: center;
+        margin-bottom: 30px;
+        text-shadow: -4px 1px 0px rgb(223, 156, 11);
+    }
+}
+
+.projects {
+    padding-bottom: 40px;
+    a {
+        color: #000;
+    }
+
+    img {
+        width: 100%;
+        height: 100px;
+    }
+
+    &__item {
+        margin-bottom: 40px;
+        padding: 10px;
+        background-color: rgba(255, 255, 255, 0.5);
+    }
+
+
+
+    &__name {
+        margin-bottom: 30px;
+        text-shadow: -4px 1px 0px rgb(223, 156, 11);
+    }
+
+
+    &__img {
+        margin-bottom: 30px;
+        animation-name: menuTablet;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+    }
+
+    &__text {
+        text-align: center;
+    }
+
+    table{
+        font-size: 12px;
+        margin: auto;
+        width: 100%;
+        text-shadow: -2px 1px 0px rgb(255, 255, 255);
+        td {
+            text-align: left;
+        }
+        td:nth-child(2n) {
+            text-align: right;
+        }
+    }
+
+}
+
+@media (min-width:$tablet) {
+
+    .portfolio {
+        &__title{
+            position: relative;
+            padding-top: 30px;
+             margin-bottom: 30px;
+             font-size: 24px;
+         }
+         &__title::before,
+         &__title::after {
+              content: '';
+              position: absolute;
+              width: 20%;
+              height: 8px;
+              top: 70%;
+              background-color: #000;
+              box-shadow: -4px 1px 0px rgb(223, 156, 11) ;
+          }
+          &__title::before {
+             right: 0;
+          }
+          &__title::after {
+             left: 0;
+          }
+    }
+    .projects {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        &__item {
+            width: 45%;
+
+        }
+
+    }
+}
+
+@media (min-width:$desktop) {
+    .portfolio {
+        margin-top: 0px;
+
+        &__title{
+            padding-top: 50px;
+             margin-bottom: 50px;
+             font-size: 36px;
+             
+         }
+    }
+    .projects {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        
+
+        &__name {
+            font-size: 24px;
+        }
+
+        table {
+            font-size: 14px;
+        }
+
+        &__item {
+            position: relative;
+            width: 30%;
+            padding-bottom: 30px;
+
+            &:hover::before, 
+            &:hover::after {
+                position: absolute;
+                background-color: #000;
+                height: 5px;
+                animation-name: hoverItem;
+                animation-duration: 0.5s;
+                animation-fill-mode: forwards;
+                content: '';
+                box-shadow: -4px 1px 0px rgb(223, 156, 11);
+            }
+            &:hover::before {
+                top: 0;
+                right: 0;
+            }
+            &:hover::after {
+                bottom: 0;
+                left: 0;
+            }
+        }
+
+    }
+}

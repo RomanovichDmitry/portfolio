@@ -1,0 +1,233 @@
+.header {
+    height: 600px;
+    background-image: url(../images/AJl.gif);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+
+    @media (min-width:$tablet) {
+        height: 100vh;
+    } 
+    @media (min-width:$desktop) {
+    } 
+
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: inherit;
+        background-color: rgba(0, 0, 0, 0.1);
+
+    }
+
+    &__text {
+        position: absolute;
+        top: 36%;
+        color:rgb(223, 156, 11);
+        text-shadow: -4px 1px 0px rgb(255, 255, 255);
+        width: 70%;
+    }
+
+    &__title {
+        font-size: 24px;
+    }
+    &__description { 
+        font-size: 22px;
+    }
+
+
+    @media (min-width:$tablet) {
+        .header {
+        &__title {
+            font-size: 26px;
+            text-shadow: -2px 1px 0px rgb(255, 255, 255);
+            span {
+                float: right;
+            }
+        }
+        &__description {
+            font-size: 24px;
+            color: #fff;
+            text-shadow: -2px 1px 0px rgb(223, 156, 11);
+        }
+        }
+    }
+
+    @media (min-width:$desktop) {
+
+        .header {
+            &__text {
+                width: 50%;
+                    }
+            &__title {
+                font-size: 38px;
+                span {
+                    float: unset;
+                }
+            }
+            &__description {
+                font-size: 24px;
+                color: #fff;
+            }
+
+            }
+    }
+} 
+
+
+.menu {
+    position: relative;
+    
+
+    &__list {
+        display: none;
+        padding-top: 40px;
+        text-shadow: -2px 1px 0px rgb(223, 156, 11);
+    }
+    .menu__btn--open ~ .menu__list {
+        transition: .5s;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__item {
+        position: absolute;
+        left: -250px;
+        margin-bottom: 20px;
+        animation-name: menuMobile;
+        animation-duration: .5s;
+        animation-fill-mode: forwards;
+    }
+    &__item:first-child {
+        top: 60px;
+    }
+    &__item:nth-child(2) {
+        top: 100px;
+        animation-delay: .3s;
+    }
+    &__item:last-child {
+        top: 140px;
+        animation-delay: .6s;
+    }
+
+    &__link {
+        color: #fff;
+        text-transform: uppercase;
+        font-size: 20px;
+    }
+
+    &__btn {
+        transition: .5s;
+        position: absolute;
+        display: block;
+        right: 0;
+        top: 40px;
+        width: 35px;
+        height: 3px;
+        border-radius: 2px;
+        background-color: #fff;
+    
+    
+
+        &::before,
+        &::after {
+            transition: .5s;
+            position: absolute;
+            content: '';
+            display: block;
+            width: 35px;
+            height: 3px;
+            border-radius: 2px;
+            background-color: #fff;
+        }
+    
+        &::before {
+            top: 10px;
+        }
+        &::after {
+            top:-10px;
+        }
+    }
+    
+
+        &__btn--open {
+            transition: .5s;
+            transform: rotate(45deg);
+        
+            &::before {
+                transition: .5s;
+                transform: rotate(-90deg);
+                top: 0;
+            }
+
+            &::after {
+                display: none;
+            }
+        }
+    
+
+    @media (min-width:$tablet) {
+
+                .header {
+        &__title {
+            font-size: 18px;
+            span {
+                float: right;
+            }
+        }
+        &__description {
+            color: #fff;
+        }
+        }
+
+         .menu {
+            &__list {    
+                display: flex;
+                justify-content: space-between;
+            }
+
+            &__item {
+                animation-name: menuTablet;
+                animation-duration: 3s;
+                animation-iteration-count: infinite;
+                position: relative;
+                flex-direction: row !important;
+                top: 0;
+                left: 0;
+            }
+
+            &__link {
+                font-size: 24px;
+            }
+
+
+            &__btn {
+                display: none;
+            }
+        }
+        
+    }
+
+    @media (min-width:$desktop) {
+        .menu {
+
+        &__list{    
+            justify-content: flex-end;
+        }
+
+        &__item {
+            margin-right: 50px;
+
+            a {
+                font-size: 30px;
+            }
+        }
+        &__item:last-child {
+            margin-right: 0;
+        }
+        
+    }
+}
+}

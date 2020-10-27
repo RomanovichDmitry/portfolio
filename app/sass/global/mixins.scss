@@ -1,0 +1,19 @@
+@mixin container() {
+    width: calc(100% - 12.5%);
+    margin: auto;
+    padding: $padding-phone;
+
+    @media (min-width:$tablet) {
+        width: 760px;
+        margin: auto;
+        padding: $padding-tablet;
+    }
+    @media (min-width:$desktop) {
+        width: 1300px;
+        margin: auto;
+        padding: $padding-desktop;
+    }
+}
+.container {  
+    @include container 
+} 

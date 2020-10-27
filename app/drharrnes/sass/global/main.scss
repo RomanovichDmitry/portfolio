@@ -1,0 +1,44 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: 16px;
+    line-height: 30px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+}
+
+a { 
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+.container {
+    @include container
+}
+
+.title__h2 {
+    font-size: 34px; //В макете указан размер 36px, но с указанным шрифтом он не влазит в контейнер и создает перенос строки
+    text-transform: uppercase;
+    font-weight: 700;
+    font-style: normal;
+    text-align: center;
+    padding-top: 45px;
+}
+
+.title__h2::after {
+    content: '';
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    display: block;
+    width: 90px;
+    height: 3px;
+    background-color: #000;
+    text-align: center;
+}
