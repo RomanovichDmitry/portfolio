@@ -501,12 +501,9 @@ li {
 .main-content {
   background-color: #dad9d6;
   background-image: url(/images/8bit.jpg);
-  background-size: 400% 100%;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: 0 0; }
-  @media (min-width: 768px) {
-    .main-content {
-      background-size: contain; } }
 
 .portfolio__title {
   padding-top: 10px;
